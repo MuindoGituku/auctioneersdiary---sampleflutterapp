@@ -2,6 +2,7 @@ import 'package:auctioneersdiary/screens/client_file_docs.dart';
 import 'package:auctioneersdiary/screens/client_file_history.dart';
 import 'package:auctioneersdiary/screens/client_file_remarks.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,7 +38,7 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
             ),
             child: fileDetailsHeader(context),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
             child: Text(
               "SE/D/893746/2023",
@@ -287,7 +288,147 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
         Row(
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return CupertinoAlertDialog(
+                      title: const Text(
+                        "Client File Charges",
+                        textAlign: TextAlign.left,
+                      ),
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 6),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Arrears Amount",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
+                                  color: Color.fromARGB(255, 130, 135, 143),
+                                ),
+                              ),
+                              SizedBox(height: 6),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "KShs.",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(width: 6),
+                                  Text(
+                                    "236,750",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontFamily: "poppins",
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Auctioneers Charges (Standard)",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
+                                  color: Color.fromARGB(255, 130, 135, 143),
+                                ),
+                              ),
+                              SizedBox(height: 6),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "KShs.",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(width: 6),
+                                  Text(
+                                    "18,750",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontFamily: "poppins",
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Advocates Fee (If Applicable)",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Poppins",
+                                  color: Color.fromARGB(255, 130, 135, 143),
+                                ),
+                              ),
+                              SizedBox(height: 6),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "KShs.",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(width: 6),
+                                  Text(
+                                    "23,675",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontFamily: "poppins",
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      actions: [
+                        CupertinoActionSheetAction(
+                          child: const Text(
+                            "Done",
+                          ),
+                          isDefaultAction: true,
+                          onPressed: () => Navigator.of(context).pop(),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
@@ -345,7 +486,7 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                         ),
                         const SizedBox(width: 8),
                         const Text(
-                          "Start Navigation",
+                          "Directions to Premises",
                         ),
                       ],
                     ),

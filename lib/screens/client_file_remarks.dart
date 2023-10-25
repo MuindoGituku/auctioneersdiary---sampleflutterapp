@@ -88,7 +88,11 @@ class _ClientFileRemarksState extends State<ClientFileRemarks> {
               SizedBox(
                 width: ScreenDimension().screenWidth(context) * .75,
                 child: TextFormField(
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.multiline,
+                  maxLines: null,
+                  expands: true,
+                  textCapitalization: TextCapitalization.sentences,
+                  textInputAction: TextInputAction.done,
                   style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 12,

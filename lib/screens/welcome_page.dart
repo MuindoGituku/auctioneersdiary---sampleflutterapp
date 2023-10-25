@@ -28,7 +28,7 @@ class WelcomeScreen extends StatelessWidget {
             width: ScreenDimension().screenWidth(context),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * .30,
+            bottom: MediaQuery.of(context).size.height * .31,
             child: const SizedBox(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
@@ -36,7 +36,7 @@ class WelcomeScreen extends StatelessWidget {
                   "Let's Get\nStarted",
                   style: TextStyle(
                     fontWeight: FontWeight.w800,
-                    fontSize: 50,
+                    fontSize: 45,
                     height: 1.25,
                     color: Color.fromARGB(216, 237, 236, 236),
                     letterSpacing: 2,
@@ -53,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * .22,
+            bottom: MediaQuery.of(context).size.height * .23,
             child: SizedBox(
               width: ScreenDimension().screenWidth(context),
               child: const Padding(
@@ -79,7 +79,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * .12,
+            bottom: MediaQuery.of(context).size.height * .13,
             child: GestureDetector(
               onTap: () {
                 Navigator.push(

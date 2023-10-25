@@ -29,8 +29,8 @@ class _UpdatesNotificationState extends State<UpdatesNotification> {
               "Notifications",
               style: TextStyle(
                 fontFamily: "Poppins",
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
                 height: 1.5,
               ),
             ),
@@ -44,7 +44,7 @@ class _UpdatesNotificationState extends State<UpdatesNotification> {
                       "Today",
                       style: TextStyle(
                         fontFamily: "Poppins",
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.w600,
                         height: 1.5,
                       ),
@@ -91,7 +91,7 @@ class _UpdatesNotificationState extends State<UpdatesNotification> {
                       "Earlier",
                       style: TextStyle(
                         fontFamily: "Poppins",
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.w600,
                         height: 1.5,
                       ),

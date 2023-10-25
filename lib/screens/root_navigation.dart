@@ -1,4 +1,4 @@
-import 'package:auctioneersdiary/screens/analyze_office.dart';
+//import 'package:auctioneersdiary/screens/analyze_office.dart';
 import 'package:auctioneersdiary/screens/app_settings.dart';
 import 'package:auctioneersdiary/screens/landing_screen.dart';
 import 'package:auctioneersdiary/screens/search_files.dart';
@@ -20,7 +20,7 @@ class _AppNavigationState extends State<AppNavigation> {
   List<Widget> appBaseScreens = [
     const HomeLanding(),
     const SearchFiles(),
-    const OfficeAnalysis(),
+    //const OfficeAnalysis(),
     const UpdatesNotification(),
     const AppSettings(),
   ];
@@ -76,11 +76,11 @@ class _AppNavigationState extends State<AppNavigation> {
             "assets/icons/search_files_filled.svg",
             "Search",
           ),
-          createBottomBarItem(
-            "assets/icons/calendar_outline.svg",
-            "assets/icons/calendar_filled.svg",
-            "Analyse",
-          ),
+          // createBottomBarItem(
+          //   "assets/icons/calendar_outline.svg",
+          //   "assets/icons/calendar_filled.svg",
+          //   "Analyse",
+          // ),
           createBottomBarItem(
             "assets/icons/bell_outline.svg",
             "assets/icons/bell_filled.svg",
@@ -92,6 +92,10 @@ class _AppNavigationState extends State<AppNavigation> {
             "More",
           ),
         ],
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
         option: AnimatedBarOptions(
           iconSize: 22,
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
