@@ -46,12 +46,12 @@ class _DailyActivityTrackerState extends State<DailyActivityTracker> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: Text(
               DateFormat.yMMMEd().format(widget.selectedDay),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.3,
                 fontSize: 20,

@@ -1,8 +1,4 @@
-import 'package:auctioneersdiary/screens/daily_activities_track.dart';
-import 'package:auctioneersdiary/widgets/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class OfficeAnalysis extends StatefulWidget {
   const OfficeAnalysis({super.key});
@@ -22,10 +18,10 @@ class _OfficeAnalysisState extends State<OfficeAnalysis> {
           15,
           MediaQuery.of(context).padding.bottom,
         ),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Office Calendar",
               style: TextStyle(
                 fontFamily: "Poppins",

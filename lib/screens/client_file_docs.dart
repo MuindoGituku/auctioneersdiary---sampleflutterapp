@@ -59,7 +59,7 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
         child: Container(
           height: 58,
           decoration:
-              BoxDecoration(color: AppColors().mainBlueColor, boxShadow: [
+              BoxDecoration(color: AppColors().mainBlueColor, boxShadow: const [
             BoxShadow(
               offset: Offset(0, 4),
               blurRadius: 15,
@@ -74,8 +74,8 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
                 "assets/icons/add_doc_filled.svg",
                 color: Colors.white,
               ),
-              SizedBox(width: 13),
-              Text(
+              const SizedBox(width: 13),
+              const Text(
                 "Upload New Document",
                 style: TextStyle(
                   fontSize: 16,

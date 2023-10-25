@@ -2,7 +2,6 @@ import 'package:auctioneersdiary/screens/client_file_details.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SearchFiles extends StatefulWidget {
   const SearchFiles({super.key});
@@ -60,7 +59,7 @@ class _SearchFilesState extends State<SearchFiles> {
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white70,
-                              prefixIcon: Icon(CupertinoIcons.search),
+                              prefixIcon: const Icon(CupertinoIcons.search),
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10),
@@ -78,7 +77,7 @@ class _SearchFilesState extends State<SearchFiles> {
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             "Search",
                             style: TextStyle(),
                           ),
@@ -139,7 +138,7 @@ class _SearchFilesState extends State<SearchFiles> {
                     ),
                     const SizedBox(height: 15),
                     ListView(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       padding: EdgeInsets.zero,
                       children: [
@@ -219,7 +218,7 @@ class _SearchFilesState extends State<SearchFiles> {
         );
       },
       child: Container(
-        margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+        margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,7 +238,7 @@ class _SearchFilesState extends State<SearchFiles> {
                     tenantNames,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
                       height: 1.5,
@@ -252,7 +251,7 @@ class _SearchFilesState extends State<SearchFiles> {
                     premisesLocation,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 11,
                       height: 1.4,
@@ -261,7 +260,7 @@ class _SearchFilesState extends State<SearchFiles> {
                 ),
                 SizedBox(
                   width: ScreenDimension().screenWidth(context) * .74,
-                  child: Text(
+                  child: const Text(
                     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -296,7 +295,7 @@ class _SearchFilesState extends State<SearchFiles> {
         );
       },
       child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
+        margin: const EdgeInsets.fromLTRB(0, 0, 15, 0),
         width: ScreenDimension().screenWidth(context) * .3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -312,7 +311,7 @@ class _SearchFilesState extends State<SearchFiles> {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 11,
                 height: 1.5,
@@ -324,7 +323,7 @@ class _SearchFilesState extends State<SearchFiles> {
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 8,
                 height: 1.5,

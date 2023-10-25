@@ -92,7 +92,7 @@ class _AppNavigationState extends State<AppNavigation> {
             "More",
           ),
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),

@@ -59,7 +59,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Charges Calculator",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -90,7 +90,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Office Activity Stats",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -121,7 +121,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Document Templates",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -163,7 +163,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "General",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -194,7 +194,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Notifications",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -225,7 +225,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "App Accessibility",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -256,7 +256,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Calculator Configuration",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -298,7 +298,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "About",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -329,7 +329,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Terms of Service",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -360,7 +360,7 @@ class AppSettings extends StatelessWidget {
                                 color: AppColors().mainBlueColor,
                               ),
                               const SizedBox(width: 20),
-                              Text(
+                              const Text(
                                 "Privacy Policy",
                                 style: TextStyle(
                                   fontFamily: "Poppins",
@@ -378,7 +378,7 @@ class AppSettings extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Align(
+                    const Align(
                       alignment: Alignment.center,
                       child: Text(
                         "Copyright ©️2023 Pixill Illustration Studios. All Rights Reserved",
@@ -405,7 +405,7 @@ class AppSettings extends StatelessWidget {
 
   Container staffProfileContainer(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(10, 6, 10, 6),
+      padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.1),
         borderRadius: BorderRadius.circular(10),
@@ -431,7 +431,7 @@ class AppSettings extends StatelessWidget {
             children: [
               SizedBox(
                 width: ScreenDimension().screenWidth(context) * .65,
-                child: Text(
+                child: const Text(
                   "Nickolas N. Muriithi",
                   maxLines: 1,
                   overflow: TextOverflow.clip,
@@ -456,7 +456,7 @@ class AppSettings extends StatelessWidget {
                   const SizedBox(width: 10),
                   SizedBox(
                     width: ScreenDimension().screenWidth(context) * .57,
-                    child: Text(
+                    child: const Text(
                       "+1 (437)661 - 2182",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -479,7 +479,7 @@ class AppSettings extends StatelessWidget {
                   const SizedBox(width: 10),
                   SizedBox(
                     width: ScreenDimension().screenWidth(context) * .57,
-                    child: Text(
+                    child: const Text(
                       "muriithi@employmentplus.org",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -502,7 +502,7 @@ class AppSettings extends StatelessWidget {
                   const SizedBox(width: 10),
                   SizedBox(
                     width: ScreenDimension().screenWidth(context) * .57,
-                    child: Text(
+                    child: const Text(
                       "Lead IT Supervisor",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -525,7 +525,7 @@ class AppSettings extends StatelessWidget {
                   const SizedBox(width: 10),
                   SizedBox(
                     width: ScreenDimension().screenWidth(context) * .57,
-                    child: Text(
+                    child: const Text(
                       "897-6745-887",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,

@@ -38,7 +38,7 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
             ),
             child: fileDetailsHeader(context),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
             child: Text(
               "SE/D/893746/2023",
@@ -297,7 +297,7 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                         "Client File Charges",
                         textAlign: TextAlign.left,
                       ),
-                      content: Column(
+                      content: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: 6),
@@ -418,11 +418,11 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                       ),
                       actions: [
                         CupertinoActionSheetAction(
+                          isDefaultAction: true,
+                          onPressed: () => Navigator.of(context).pop(),
                           child: const Text(
                             "Done",
                           ),
-                          isDefaultAction: true,
-                          onPressed: () => Navigator.of(context).pop(),
                         ),
                       ],
                     );

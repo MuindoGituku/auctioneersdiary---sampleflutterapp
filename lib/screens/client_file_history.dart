@@ -39,7 +39,7 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
         child: Container(
           height: 58,
           decoration:
-              BoxDecoration(color: AppColors().mainBlueColor, boxShadow: [
+              BoxDecoration(color: AppColors().mainBlueColor, boxShadow: const [
             BoxShadow(
               offset: Offset(0, 4),
               blurRadius: 15,
@@ -54,8 +54,8 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
                 "assets/icons/add_folder_filled.svg",
                 color: Colors.white,
               ),
-              SizedBox(width: 13),
-              Text(
+              const SizedBox(width: 13),
+              const Text(
                 "Add Recurrent Client File",
                 style: TextStyle(
                   fontSize: 16,
@@ -77,7 +77,7 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
     required String arrearsAmount,
   }) {
     return Container(
-      margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
+      margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +97,7 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
                   runPeriod,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
@@ -111,7 +111,7 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
                   arrearsAmount,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 12,
                     height: 1.5,
@@ -120,7 +120,7 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
               ),
               SizedBox(
                 width: ScreenDimension().screenWidth(context) * .72,
-                child: Text(
+                child: const Text(
                   "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

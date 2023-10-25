@@ -43,12 +43,12 @@ class _HomeLandingState extends State<HomeLanding> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      padding: EdgeInsets.fromLTRB(10, 7, 10, 7),
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      padding: const EdgeInsets.fromLTRB(10, 7, 10, 7),
                       width: double.maxFinite,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(187, 255, 255, 255),
+                        color: const Color.fromARGB(187, 255, 255, 255),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Row(
@@ -96,7 +96,7 @@ class _HomeLandingState extends State<HomeLanding> {
                         height: 150,
                         enlargeFactor: 0.6,
                         autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 10),
+                        autoPlayInterval: const Duration(seconds: 10),
                         enlargeCenterPage: true,
                       ),
                     ),
@@ -112,7 +112,7 @@ class _HomeLandingState extends State<HomeLanding> {
                     ),
                     const SizedBox(height: 10),
                     ListView(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       padding: EdgeInsets.zero,
                       children: [
@@ -192,7 +192,7 @@ class _HomeLandingState extends State<HomeLanding> {
         );
       },
       child: Container(
-        margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+        margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,7 +212,7 @@ class _HomeLandingState extends State<HomeLanding> {
                     tenantNames,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 12,
                       height: 1.5,
@@ -225,7 +225,7 @@ class _HomeLandingState extends State<HomeLanding> {
                     premisesLocation,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 11,
                       height: 1.4,
@@ -234,7 +234,7 @@ class _HomeLandingState extends State<HomeLanding> {
                 ),
                 SizedBox(
                   width: ScreenDimension().screenWidth(context) * .74,
-                  child: Text(
+                  child: const Text(
                     "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -266,10 +266,10 @@ class _HomeLandingState extends State<HomeLanding> {
         );
       },
       child: Container(
-        margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
-        padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+        margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         decoration: BoxDecoration(
-          color: Color.fromARGB(187, 255, 255, 255),
+          color: const Color.fromARGB(187, 255, 255, 255),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Table(
@@ -443,7 +443,7 @@ class _HomeLandingState extends State<HomeLanding> {
                 children: [
                   Text(
                     numberCount,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontFamily: "Poppins",
                         fontSize: 30,
                         fontWeight: FontWeight.w900,
@@ -456,7 +456,7 @@ class _HomeLandingState extends State<HomeLanding> {
                     textAlign: TextAlign.left,
                     maxLines: 1,
                     overflow: TextOverflow.clip,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 241, 241, 241),
@@ -470,11 +470,11 @@ class _HomeLandingState extends State<HomeLanding> {
                 child: Container(
                   width: 35,
                   height: 35,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: SvgPicture.asset(
                     artLocation,
                     color: Colors.white.withOpacity(0.3),
-                    theme: SvgTheme(
+                    theme: const SvgTheme(
                       currentColor: Colors.white,
                       fontSize: 20,
                     ),
@@ -492,11 +492,11 @@ class _HomeLandingState extends State<HomeLanding> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
+        const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 3),
-            const Text(
+            Text(
               "Good afternoon!",
               style: TextStyle(
                 fontFamily: "Poppins",
@@ -507,7 +507,7 @@ class _HomeLandingState extends State<HomeLanding> {
               ),
             ),
             SizedBox(height: 3),
-            const Text(
+            Text(
               "Nickolas Muriithi",
               style: TextStyle(
                 fontFamily: "Poppins",
@@ -526,7 +526,7 @@ class _HomeLandingState extends State<HomeLanding> {
               child: Container(
                 width: 37,
                 height: 37,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(10),
@@ -539,13 +539,13 @@ class _HomeLandingState extends State<HomeLanding> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             GestureDetector(
               onTap: () {},
               child: Container(
                 width: 37,
                 height: 37,
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(10),
