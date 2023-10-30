@@ -1,4 +1,6 @@
+import 'package:auctioneersdiary/forms/add_recurrent_file.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -35,7 +37,16 @@ class _ClientFileHistoryState extends State<ClientFileHistory> {
         ],
       ),
       bottomSheet: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) {
+                return const NewRecurrentFile();
+              },
+            ),
+          );
+        },
         child: Container(
           height: 58,
           decoration:

@@ -1,4 +1,7 @@
+import 'package:auctioneersdiary/forms/add_new_document.dart';
+import 'package:auctioneersdiary/forms/edit_selected_document.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -55,7 +58,16 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
         ],
       ),
       bottomSheet: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) {
+                return const NewFileDocument();
+              },
+            ),
+          );
+        },
         child: Container(
           height: 58,
           decoration:
@@ -188,7 +200,6 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
                         width: 15,
                         height: 15,
                         fit: BoxFit.cover,
-                        //color: AppColors().mainBlueColor,
                       ),
                       const SizedBox(width: 8),
                       const Text(
@@ -198,6 +209,16 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
                   ),
                 ),
                 PopupMenuItem(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) {
+                          return const UpdateFileDocument();
+                        },
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       SvgPicture.asset(
@@ -205,7 +226,6 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
                         width: 15,
                         height: 15,
                         fit: BoxFit.cover,
-                        //color: AppColors().mainBlueColor,
                       ),
                       const SizedBox(width: 8),
                       const Text(

@@ -1,4 +1,16 @@
+import 'package:auctioneersdiary/settings/about_the_app.dart';
+import 'package:auctioneersdiary/settings/app_accessibility_settings.dart';
+import 'package:auctioneersdiary/settings/calculator_config.dart';
+import 'package:auctioneersdiary/settings/charges_calculator.dart';
+import 'package:auctioneersdiary/settings/document_templates.dart';
+import 'package:auctioneersdiary/settings/general_settings.dart';
+import 'package:auctioneersdiary/settings/notification_settings.dart';
+import 'package:auctioneersdiary/settings/office_activity_stats.dart';
+import 'package:auctioneersdiary/settings/privacy_policy.dart';
+import 'package:auctioneersdiary/settings/staff_profile_page.dart';
+import 'package:auctioneersdiary/settings/terms_of_service.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -9,12 +21,7 @@ class AppSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(
-          15,
-          MediaQuery.of(context).padding.top,
-          15,
-          MediaQuery.of(context).padding.bottom,
-        ),
+        padding: ScreenDimension().defaultScreenPadding(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,7 +40,19 @@ class AppSettings extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 10),
-                    staffProfileContainer(context),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const StaffProfilePage();
+                            },
+                          ),
+                        );
+                      },
+                      child: staffProfileContainer(context),
+                    ),
                     const SizedBox(height: 20),
                     const Text(
                       "Office Tools",
@@ -45,97 +64,133 @@ class AppSettings extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/calculator_filled.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Charges Calculator",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const ChargesCalculator();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/calculator_filled.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Charges Calculator",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/chart_simple_filled.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Office Activity Stats",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const OfficeActivityStats();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/chart_simple_filled.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Office Activity Stats",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/template.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Document Templates",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const DocumentTemplates();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/template.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Document Templates",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -149,128 +204,176 @@ class AppSettings extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/settings_general.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "General",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const GeneralSettings();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/settings_general.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "General",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/bell_filled.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Notifications",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const NotificationSettings();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/bell_filled.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Notifications",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/universal_access.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "App Accessibility",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const AppAccessSettings();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/universal_access.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "App Accessibility",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/calculator_simple.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Calculator Configuration",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const CalculatorConfiguration();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/calculator_simple.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Calculator Configuration",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -284,97 +387,133 @@ class AppSettings extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/info.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "About",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const AboutTheApp();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/info.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "About",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/signature.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Terms of Service",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const TermsOfService();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/signature.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Terms of Service",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/icons/user_lock.svg",
-                                width: 22,
-                                height: 22,
-                                color: AppColors().mainBlueColor,
-                              ),
-                              const SizedBox(width: 20),
-                              const Text(
-                                "Privacy Policy",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
-                                  fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const PrivacyPolicy();
+                            },
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/user_lock.svg",
+                                  width: 22,
+                                  height: 22,
+                                  color: AppColors().mainBlueColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/angle_right.svg",
-                            width: 20,
-                            height: 20,
-                          ),
-                        ],
+                                const SizedBox(width: 20),
+                                const Text(
+                                  "Privacy Policy",
+                                  style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/angle_right.svg",
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
