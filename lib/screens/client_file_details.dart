@@ -1,3 +1,4 @@
+import 'package:auctioneersdiary/forms/edit_selected_file.dart';
 import 'package:auctioneersdiary/screens/client_file_docs.dart';
 import 'package:auctioneersdiary/screens/client_file_history.dart';
 import 'package:auctioneersdiary/screens/client_file_remarks.dart';
@@ -30,16 +31,13 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(
-              15,
-              MediaQuery.of(context).padding.top,
-              15,
-              MediaQuery.of(context).padding.bottom,
-            ),
+            padding: ScreenDimension()
+                .defaultScreenPadding(context)
+                .copyWith(bottom: 0),
             child: fileDetailsHeader(context),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+            padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
             child: Text(
               "SE/D/893746/2023",
               style: TextStyle(
@@ -458,6 +456,16 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
               itemBuilder: (context) {
                 return [
                   PopupMenuItem(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) {
+                            return const UpdateClientFile();
+                          },
+                        ),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(
@@ -465,7 +473,6 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                           width: 15,
                           height: 15,
                           fit: BoxFit.cover,
-                          //color: AppColors().mainBlueColor,
                         ),
                         const SizedBox(width: 8),
                         const Text(
@@ -482,7 +489,6 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                           width: 15,
                           height: 15,
                           fit: BoxFit.cover,
-                          //color: AppColors().mainBlueColor,
                         ),
                         const SizedBox(width: 8),
                         const Text(
@@ -499,7 +505,6 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                           width: 15,
                           height: 15,
                           fit: BoxFit.cover,
-                          //color: AppColors().mainBlueColor,
                         ),
                         const SizedBox(width: 8),
                         const Text(
@@ -519,7 +524,6 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                           width: 15,
                           height: 15,
                           fit: BoxFit.cover,
-                          //color: AppColors().mainBlueColor,
                         ),
                         const SizedBox(width: 8),
                         const Text(
@@ -536,7 +540,6 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                           width: 15,
                           height: 15,
                           fit: BoxFit.cover,
-                          //color: AppColors().mainBlueColor,
                         ),
                         const SizedBox(width: 8),
                         const Text(

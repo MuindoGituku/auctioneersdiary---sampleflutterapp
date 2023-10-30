@@ -1,4 +1,6 @@
+import 'package:auctioneersdiary/forms/add_new_file.dart';
 import 'package:auctioneersdiary/screens/client_file_details.dart';
+import 'package:auctioneersdiary/settings/staff_profile_page.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,12 +19,7 @@ class _HomeLandingState extends State<HomeLanding> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(
-          15,
-          MediaQuery.of(context).padding.top,
-          15,
-          MediaQuery.of(context).padding.bottom,
-        ),
+        padding: ScreenDimension().defaultScreenPadding(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -522,7 +519,16 @@ class _HomeLandingState extends State<HomeLanding> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const NewClientFile();
+                    },
+                  ),
+                );
+              },
               child: Container(
                 width: 37,
                 height: 37,
@@ -541,7 +547,16 @@ class _HomeLandingState extends State<HomeLanding> {
             ),
             const SizedBox(width: 20),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const StaffProfilePage();
+                    },
+                  ),
+                );
+              },
               child: Container(
                 width: 37,
                 height: 37,

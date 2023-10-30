@@ -15,12 +15,7 @@ class _SearchFilesState extends State<SearchFiles> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(
-          15,
-          MediaQuery.of(context).padding.top,
-          15,
-          MediaQuery.of(context).padding.bottom,
-        ),
+        padding: ScreenDimension().defaultScreenPadding(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
