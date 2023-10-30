@@ -1,5 +1,6 @@
 import 'package:auctioneersdiary/screens/root_navigation.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -162,7 +163,15 @@ class _StaffLoginScreenState extends State<StaffLoginScreen> {
             ),
             const SizedBox(height: 30),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
+                await CoolAlert.show(
+                  context: context,
+                  barrierDismissible: false,
+                  type: CoolAlertType.loading,
+                  text: "Authenticating staff credentials...",
+                  autoCloseDuration: Duration(seconds: 5),
+                );
+
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
@@ -235,7 +244,15 @@ class _StaffLoginScreenState extends State<StaffLoginScreen> {
                           fontWeight: FontWeight.w900,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () {
+                          ..onTap = () async {
+                            await CoolAlert.show(
+                              context: context,
+                              barrierDismissible: false,
+                              type: CoolAlertType.loading,
+                              text: "Fetching client files from database...",
+                              autoCloseDuration: Duration(seconds: 5),
+                            );
+
                             Navigator.push(
                               context,
                               CupertinoPageRoute(

@@ -1,6 +1,7 @@
 import 'package:auctioneersdiary/screens/login_page.dart';
 import 'package:auctioneersdiary/screens/root_navigation.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,15 @@ class WelcomeScreen extends StatelessWidget {
           Positioned(
             bottom: MediaQuery.of(context).size.height * .13,
             child: GestureDetector(
-              onTap: () {
+              onTap: () async {
+                await CoolAlert.show(
+                  context: context,
+                  barrierDismissible: false,
+                  type: CoolAlertType.loading,
+                  text: "Fetching client files from database...",
+                  autoCloseDuration: Duration(seconds: 5),
+                );
+
                 Navigator.push(
                   context,
                   CupertinoPageRoute(
