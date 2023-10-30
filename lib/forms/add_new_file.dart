@@ -4,7 +4,6 @@ import 'package:auctioneersdiary/widgets/sample_input_field.dart';
 import 'package:auctioneersdiary/widgets/secondary_page_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class NewClientFile extends StatefulWidget {
   const NewClientFile({super.key});

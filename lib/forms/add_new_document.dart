@@ -4,7 +4,6 @@ import 'package:auctioneersdiary/widgets/sample_input_field.dart';
 import 'package:auctioneersdiary/widgets/secondary_page_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class NewFileDocument extends StatefulWidget {
   const NewFileDocument({super.key});
@@ -88,10 +87,10 @@ class _NewFileDocumentState extends State<NewFileDocument> {
                       width: ScreenDimension().screenWidth(context),
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(149, 206, 205, 205),
+                        color: const Color.fromARGB(149, 206, 205, 205),
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Tap to upload documents...",
                           style: TextStyle(
