@@ -1,4 +1,5 @@
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:timeline_tile/timeline_tile.dart';
@@ -119,17 +120,28 @@ class _ClientFileRemarksState extends State<ClientFileRemarks> {
                   ),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColors().mainBlueColor,
-                ),
-                child: SvgPicture.asset(
-                  "assets/icons/paper_plane_filled.svg",
-                  width: 25,
-                  height: 25,
-                  color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  CoolAlert.show(
+                    context: context,
+                    barrierDismissible: false,
+                    type: CoolAlertType.loading,
+                    text: "Uploading new progress remark...",
+                    autoCloseDuration: Duration(seconds: 5),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: AppColors().mainBlueColor,
+                  ),
+                  child: SvgPicture.asset(
+                    "assets/icons/paper_plane_filled.svg",
+                    width: 25,
+                    height: 25,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

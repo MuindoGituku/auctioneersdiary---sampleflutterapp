@@ -5,11 +5,13 @@ import 'package:flutter_svg/svg.dart';
 Widget largeSizeUploadButton({
   required String buttonPurpose,
   required BuildContext context,
+  void Function()? onTapLargeButton,
 }) {
   return Column(
     children: [
       const SizedBox(height: 10),
       GestureDetector(
+        //onTap: () => onTapLargeButton ?? Navigator.of(context).pop(),
         onTap: () => Navigator.of(context).pop(),
         child: Container(
           padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),

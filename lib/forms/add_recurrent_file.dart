@@ -2,6 +2,7 @@ import 'package:auctioneersdiary/widgets/constants.dart';
 import 'package:auctioneersdiary/widgets/large_size_button.dart';
 import 'package:auctioneersdiary/widgets/sample_input_field.dart';
 import 'package:auctioneersdiary/widgets/secondary_page_header.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -75,6 +76,17 @@ class _NewRecurrentFileState extends State<NewRecurrentFile> {
                     largeSizeUploadButton(
                       buttonPurpose: "Upload New Recurrent File",
                       context: context,
+                      onTapLargeButton: () async {
+                        await CoolAlert.show(
+                          context: context,
+                          barrierDismissible: false,
+                          type: CoolAlertType.loading,
+                          text: "Uploading new recurrent client file...",
+                          autoCloseDuration: Duration(seconds: 5),
+                        );
+
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ],
                 ),
@@ -102,6 +114,33 @@ class _NewRecurrentFileState extends State<NewRecurrentFile> {
           1: FlexColumnWidth(),
         },
         children: const [
+          TableRow(
+            children: [
+              Text(
+                "Client File ID:",
+                maxLines: 1,
+                overflow: TextOverflow.clip,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins",
+                  fontSize: 10,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                child: Text(
+                  "SE/D/893746/2023",
+                  maxLines: 1,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontFamily: "Poppins",
+                    fontSize: 11,
+                  ),
+                ),
+              ),
+            ],
+          ),
           TableRow(
             children: [
               Text(

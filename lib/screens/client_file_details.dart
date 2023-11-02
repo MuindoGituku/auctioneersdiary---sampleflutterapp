@@ -3,6 +3,7 @@ import 'package:auctioneersdiary/screens/client_file_docs.dart';
 import 'package:auctioneersdiary/screens/client_file_history.dart';
 import 'package:auctioneersdiary/screens/client_file_remarks.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -482,6 +483,14 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                     ),
                   ),
                   PopupMenuItem(
+                    onTap: () {
+                      CoolAlert.show(
+                        context: context,
+                        type: CoolAlertType.loading,
+                        text: "Mapping directions to premises...",
+                        autoCloseDuration: Duration(seconds: 2),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(
@@ -498,6 +507,35 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                     ),
                   ),
                   PopupMenuItem(
+                    onTap: () {
+                      CoolAlert.show(
+                        context: context,
+                        type: CoolAlertType.info,
+                        barrierDismissible: false,
+                        title: "Close file...",
+                        text:
+                            "No more changes can be made after the file is closed!",
+                        widget: TextFormField(),
+                        confirmBtnColor: AppColors().mainBlueColor,
+                        confirmBtnText: "Close File",
+                        showCancelBtn: true,
+                        cancelBtnText: "Cancel",
+                        confirmBtnTextStyle: TextStyle(
+                          fontFamily: "Poppins",
+                          height: 1.5,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                        cancelBtnTextStyle: TextStyle(
+                          fontFamily: "Poppins",
+                          color: AppColors().mainBlueColor,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          height: 1.5,
+                        ),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(
@@ -517,6 +555,14 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                     child: PopupMenuDivider(),
                   ),
                   PopupMenuItem(
+                    onTap: () {
+                      CoolAlert.show(
+                        context: context,
+                        type: CoolAlertType.loading,
+                        text: "Share client file...",
+                        autoCloseDuration: Duration(seconds: 2),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(
@@ -533,6 +579,14 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                     ),
                   ),
                   PopupMenuItem(
+                    onTap: () {
+                      CoolAlert.show(
+                        context: context,
+                        type: CoolAlertType.loading,
+                        text: "Downloading documents...",
+                        autoCloseDuration: Duration(seconds: 2),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(
@@ -549,6 +603,34 @@ class _ClientFileDetailsState extends State<ClientFileDetails>
                     ),
                   ),
                   PopupMenuItem(
+                    onTap: () {
+                      CoolAlert.show(
+                        context: context,
+                        type: CoolAlertType.error,
+                        barrierDismissible: false,
+                        title: "Are you sure?",
+                        text:
+                            "You are about to delete this client file from the firm database!",
+                        confirmBtnColor: AppColors().mainBlueColor,
+                        confirmBtnText: "Keep It",
+                        showCancelBtn: true,
+                        cancelBtnText: "Delete",
+                        confirmBtnTextStyle: TextStyle(
+                          fontFamily: "Poppins",
+                          height: 1.5,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                        cancelBtnTextStyle: TextStyle(
+                          fontFamily: "Poppins",
+                          color: Colors.red,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          height: 1.5,
+                        ),
+                      );
+                    },
                     child: Row(
                       children: [
                         SvgPicture.asset(

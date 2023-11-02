@@ -1,6 +1,7 @@
 import 'package:auctioneersdiary/forms/add_new_document.dart';
 import 'package:auctioneersdiary/forms/edit_selected_document.dart';
 import 'package:auctioneersdiary/widgets/constants.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -193,6 +194,24 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
+                  onTap: () {
+                    CoolAlert.show(
+                      context: context,
+                      type: CoolAlertType.success,
+                      barrierDismissible: false,
+                      title: "Success...",
+                      text: "You have downloaded and opened the file document!",
+                      confirmBtnColor: AppColors().mainBlueColor,
+                      confirmBtnText: "Done Viewing",
+                      confirmBtnTextStyle: TextStyle(
+                        fontFamily: "Poppins",
+                        height: 1.5,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       SvgPicture.asset(
@@ -235,6 +254,34 @@ class _ClientFileDocumentsState extends State<ClientFileDocuments> {
                   ),
                 ),
                 PopupMenuItem(
+                  onTap: () {
+                    CoolAlert.show(
+                      context: context,
+                      type: CoolAlertType.error,
+                      barrierDismissible: false,
+                      title: "Are you sure?",
+                      text:
+                          "You are about to delete a document from this file!",
+                      confirmBtnColor: AppColors().mainBlueColor,
+                      confirmBtnText: "Keep It",
+                      showCancelBtn: true,
+                      cancelBtnText: "Delete",
+                      confirmBtnTextStyle: TextStyle(
+                        fontFamily: "Poppins",
+                        height: 1.5,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                      cancelBtnTextStyle: TextStyle(
+                        fontFamily: "Poppins",
+                        color: Colors.red,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                        height: 1.5,
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       SvgPicture.asset(

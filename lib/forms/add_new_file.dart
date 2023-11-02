@@ -2,6 +2,7 @@ import 'package:auctioneersdiary/widgets/constants.dart';
 import 'package:auctioneersdiary/widgets/large_size_button.dart';
 import 'package:auctioneersdiary/widgets/sample_input_field.dart';
 import 'package:auctioneersdiary/widgets/secondary_page_header.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,13 @@ class _NewClientFileState extends State<NewClientFile> {
                           fontWeight: FontWeight.w300,
                         ),
                       ),
+                    ),
+                    const SizedBox(height: 10),
+                    sampleInputTextField(
+                      fieldLabel: "Client File ID",
+                      fieldHelper:
+                          "Enter the proper client file ID used in reference",
+                      fieldIcon: CupertinoIcons.number,
                     ),
                     const SizedBox(height: 10),
                     const Text(
@@ -112,6 +120,17 @@ class _NewClientFileState extends State<NewClientFile> {
                     largeSizeUploadButton(
                       buttonPurpose: "Upload New Client File",
                       context: context,
+                      onTapLargeButton: () async {
+                        await CoolAlert.show(
+                          context: context,
+                          barrierDismissible: false,
+                          type: CoolAlertType.loading,
+                          text: "Uploading new client file...",
+                          autoCloseDuration: Duration(seconds: 5),
+                        );
+
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ],
                 ),
